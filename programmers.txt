@@ -1,0 +1,6 @@
+openocd.name=Strive FPGA
+openocd.communication=usb
+openocd.program.params.verbose=-v
+openocd.program.params.quiet=-q
+openocd.program.tool=openocd
+

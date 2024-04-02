@@ -1,0 +1,64 @@
+# For Strive 1, allow Clock Frequency selection
+
+menu.clksrc=CPU Clock Frequency
+menu.toolsloc=Tool Install Location
+
+strive_1.name=Strive 1 FPGA
+
+strive_1.menu.toolsloc.default=Default
+strive_1.menu.toolsloc.manual=Manual
+strive_1.menu.toolsloc.default.compiler.path={runtime.tools.riscv32-unknown-elf-gcc.path}/bin/
+strive_1.menu.toolsloc.manual.compiler.path=
+
+#Point to the file for ./variants/<variant>/pins_arduino.h
+strive_1.build.variant=standard
+
+strive_1.menu.clksrc.fpga=50MHz FPGA Clock
+#strive_1.menu.clksrc.fpga.build.f_cpu=50000000L
+
+strive_1.build.mcu=rv32imac
+
+#"The 'core' file directory for this board, in ./cores
+strive_1.build.core=arduino
+# This sets a define for use in the compiled code.
+strive_1.build.board=Strive_1
+strive_1.build.boardenv=strive-1
+strive_1.build.sdata.size=4096
+#This selects the tool from "programmers.txt"
+strive_1.program.tool=openocd
+strive_1.upload.tool=openocd
+# Limit is the 128MB Flash. Assume half is used for something else.
+strive_1.upload.maximum_size=64000
+strive_1.build.ldscript={compiler.sdk.path}/env/strive-1/link.lds
+strive_1.build.openocdcfg=fpga.cfg
+strive_1.bootloader.tool=openocd
+
+genysys.name=GenysysV1
+
+genysys.menu.toolsloc.default=Default
+genysys.menu.toolsloc.manual=Manual
+genysys.menu.toolsloc.default.compiler.path={runtime.tools.riscv32-unknown-elf-gcc.path}/bin/
+genysys.menu.toolsloc.manual.compiler.path=
+
+#Point to the file for ./variants/<variant>/pins_arduino.h
+genysys.build.variant=genysys
+
+genysys.menu.clksrc.fpga=50MHz FPGA Clock
+#genysys.menu.clksrc.fpga.build.f_cpu=50000000L
+
+genysys.build.mcu=rv32imac
+
+#"The 'core' file directory for this board, in ./cores
+genysys.build.core=arduino
+# This sets a define for use in the compiled code.
+genysys.build.board=Genysys_FPGA
+genysys.build.boardenv=genysys_v1
+genysys.build.sdata.size=4096
+#This selects the tool from "programmers.txt"
+genysys.program.tool=openocd
+genysys.upload.tool=openocd
+# Limit is the 128MB Flash. Assume half is used for something else.
+genysys.upload.maximum_size=64000
+genysys.build.ldscript={compiler.sdk.path}/env/genysys_v1/link.lds
+genysys.build.openocdcfg=fpga.cfg
+genysys.bootloader.tool=openocd
